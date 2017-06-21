@@ -58,3 +58,32 @@ body{
 	background-size: 100% 100%;
 	-o-background-size: 100% 100%;
 }*/
+/*.mySlides {
+	display:none;
+	
+.w3-left, .w3-right, .w3-badge {cursor:pointer}
+.w3-badge {height:13px;width:13px;padding:0}
+}*/
+#inlineTable{
+  border: none;
+}
+#rectangle{
+	width: cover;
+	height: 1.5em;
+	position: relative;
+	border: 1px solid lightblue;
+	top: 3.75em;
+	z-index: 20;
+	background-color: lightblue;
+}
+.w3-container{
+	position: relative
+}
+h1{
+	position: absolute;
+	top: -16em;
+	width: 100%;
+	z-index: 3;
+	font: sans-serif;
+	color: gold;
+}

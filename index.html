@@ -1,12 +1,16 @@
 
 <!DOCTYPE html>
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <html ng-app="myApp">
 <head>
 <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
 	<title>Shopping List Application</title>
-
 	<link rel="stylesheet" type="text/css" href="main.css">
+	<style>
+		.mySlides {display:none}
+		.w3-left, .w3-right, .w3-badge {cursor:pointer}
+		.w3-badge {height:13px;width:13px;padding:0}
+</style>
 </head>
 <body>
 	<nav>
@@ -14,7 +18,27 @@
 			<li><a href="#/home">Home</a></li>
 			<li><a href="#/shopping-list">Shopping List</a></li>
 	</nav>
-	
+
+	<div class="w3-container">
+		<div class="w3-content w3-display-container" style="max-width:800px">
+	  <img class="mySlides" src="img/oats.jpeg" style="width:cover">
+	  <img class="mySlides" src="img/beans.jpg" style="width:cover">
+	  <img class="mySlides" src="img/rice.jpeg" style="width:cover">
+	  <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+	  <h1>Shop List Pal</h1>
+	<table id="inlineTable" cellspacing="0" cellpadding="0">
+	<thead>
+		<tr>
+	    	<th><div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div></th>
+	    	<th><div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div></th>
+	</table>
+	    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+	    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+	    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+	 </div>
+</div>
+	<div id= rectangle></div>
+	</div>
 	<main ng-view></main>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
@@ -23,5 +47,6 @@
 	<script type="text/javascript" src="./shopping-controller.js"></script>
 	<script type="text/javascript" src="./shopping-service.js"></script>
 	<script type="text/javascript" src="./home-controller.js"></script>
+	<script type="text/javascript" src="./slideshow.js"></script>
 </body>
 </html>
