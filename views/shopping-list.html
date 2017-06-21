@@ -1,0 +1,37 @@
+<!-- // on clicking the submit button AngularJS adds the following and puts them in {{list}} which appears in the document under Current List-->
+<form ng-submit='addItem(newItem)' name="list">
+	<!-- // add a new item, quantity, and priority using Angualr JS newItem module. -->
+	<label>Item</label>
+	<input type="text" placeholder="Item" ng-model="newItem.name">
+	<label >Quantity</label>
+	<input type="number" placeholder="Qty" ng-model="newItem.qty">
+	<label>Priority</label>
+	<!-- // you can choose a low or high priority -->
+	<select ng-model="newItem.priority">
+		<option>low</option>
+		<option>high</option>
+	</select>
+
+	<button type="submit">Add</button>
+</form>
+<p>{{list}}</p>
+<h3>Shopping List</h3>
+<!-- AngularJS buttons to change the quantity, name, and priority -->
+<button ng-click="order = 'qty'">Order by Quantity</button>
+<button ng-click="order = 'name'">Order by Name</button>
+<button ng-click="order = 'priority'">Order by Priority</button>
+<!-- You can order by quantity, name, or priority -->
+<div class="card">
+	<div class="card-block">
+		<ul>
+			<li ng-repeat="item in items | orderBy: order">
+			qty: {{item.qty}} -
+			{{item.name}} - 
+			priority: {{item.priority}}
+			<button id="remove" ng-click="removeItem(item)"><b>X</b></button>
+			</li>
+		</ul>
+	</div>
+</div>
+<!-- You can remove all items in the list -->
+<button ng-click="removeAll()">Remove All</button>
