@@ -14,8 +14,8 @@ angular.module('myApp')
 	};
 	// removes items from each object
 	shoplist.removeItem = function(item){
-		var removedItem = shoplist.item.indexOf(item);
-		shoplist.item.splice(removeItem, 2);
+		var removedItem = shoplist.items.indexOf(item);
+		shoplist.items.splice(removedItem, 1);
 	};
 	//clear the lists on both home and shopping list tabs
 	shoplist.removeAll = function(){
